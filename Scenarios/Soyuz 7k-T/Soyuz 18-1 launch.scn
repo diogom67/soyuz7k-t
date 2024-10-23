@@ -1,0 +1,112 @@
+BEGIN_DESC
+Launch Soyuz 18-1 for a rendezvous with Salyut 4.
+Requires igel's Soyuz launcher.
+END_DESC
+
+BEGIN_ENVIRONMENT
+  System Spaceports\Sol
+  Context B-1
+  Date MJD 42507.4604338770
+END_ENVIRONMENT
+
+BEGIN_FOCUS
+  Ship Launchpad
+END_FOCUS
+
+BEGIN_CAMERA
+  TARGET Launchpad
+  MODE Extern
+  POS 2.14 163.09 -2.16
+  TRACKMODE TargetRelative
+  FOV 45.00
+END_CAMERA
+
+BEGIN_SHIPS
+Mission:Soyuz\Mission
+  MISSION Soyuz-18-1
+  MISSION_FILE Customizations\Soyuz\Missions\SoyuzMissions7KT.cfg
+  CLEANUP
+END
+Salyut4:Soyuz_7k\Salyut4
+  STATUS Orbiting Earth
+  RPOS -6375073.519 -189390.954 -2121286.027
+  RVEL 2233.1835 -3688.3522 -6380.3010
+  AROT 82.605 -11.092 -41.195
+  VROT -0.0006 -0.0000 0.0128
+  AFCMODE 7
+  PRPLEVEL 0:0.800000 1:0.900000
+  IDS 0:2 100
+  NAVFREQ 0 0
+  RCS 3
+  TGT Soyuz-18-1
+END
+Soyuz-18-1:Soyuz_7k\Soyuz7k_T
+  STATUS Landed Earth
+  AFCMODE 7
+  PRPLEVEL 0:1.000000 1:1.000000 2:1.000000
+  NAVFREQ 0 0
+  ANIM 2 1.0000 3 1.0000 0 0.0000 0 0.0000
+  PROBE 0 0.0000 2 1.0000 0 0.0000
+  RCS 3
+  TGT Salyut4
+  MOD 0 0
+  MJD 42507.461736
+  KSU 0 15
+  ORNT 0 0 0 0 0 0 0 0 0
+  SUN 0 0 0
+  INRT 0 0 0 0 0
+  PVU 0 0 0 0 0 0
+  CM 0
+  GLOBE 0 0 0 0
+  INK 90.000000 0.000000 0.000000 0
+  INT 0
+  CAM 3
+  PWR 1.00 1 1.00 0 1.00
+END
+FairingPlus:Soyuz\Generic
+  SUBTYPE Fairing7KTPlus
+END
+FairingMinus:Soyuz\Generic
+  SUBTYPE Fairing7KTMinus
+END
+LES:Soyuz\Generic
+  SUBTYPE LES
+END
+Skirt1:Soyuz\Generic
+  SUBTYPE SkirtI1
+END
+Skirt2:Soyuz\Generic
+  SUBTYPE SkirtI2
+END
+Skirt3:Soyuz\Generic
+  SUBTYPE SkirtI3
+END
+BlockI:Soyuz\BlockI
+  PAYLOAD Soyuz-18-1
+  FAIRING1 FairingPlus
+  FAIRING2 FairingMinus
+  LES LES  
+  SKIRT1 Skirt1
+  SKIRT2 Skirt2
+  SKIRT3 Skirt3
+END
+BlockB:Soyuz\BlockBD
+END
+BlockV:Soyuz\BlockBD
+END
+BlockG:Soyuz\BlockBD
+END
+BlockD:Soyuz\BlockBD
+END
+BlockA:Soyuz\BlockA
+  PAYLOAD BlockI
+  STATUS Orbiting Earth
+  BLOCK_B BlockB
+  BLOCK_V BlockV
+  BLOCK_G BlockG
+  BLOCK_D BlockD
+END
+Launchpad:Soyuz\Launchpad
+ LAUNCHER BlockA
+END
+END_SHIPS
