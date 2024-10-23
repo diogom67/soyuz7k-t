@@ -1,0 +1,43 @@
+Baikal - 18/05/2023:
+- Basic main/backup battery implementation added, with power drain variation based on active systems on top of base power drain: external lights, IKP, clock
+- Combined power mode and recharge when docked to Salyut (no influence from sun exposure for now)
+- ELS button changed to be all-signal illumination test
+- KSU SSVP signalling only when SSVP power on and show extended/retracted/open/closed, not intermediate states
+- Improvements to SSVP operation
+- IKP: Automatic Descent and Automatic Manoeuvre programs, standby and illumination test modes added
+- BTSI target Delta-V input enabled for IKP Programs
+- Optimisation of VC panel display rendering
+- Vzor central and peripheral screen on/off added
+- Globe texture updated (southern hemisphere latitude labels)
+- Scenario save states for orientation modes, PVU/IKP and BDUS
+- Igla temporarily disabled
+- Documentation updated
+
+
+
+Kavkaz - 18/10/2022:
+- Igla reworked for far-range approach and typical mission profile
+- Descent Guidance: basic SUS control, ballistic reentry, SA thruster and aerodynamics rework
+- New main parachute mesh and texture
+- Drogue chute added
+- Interior lighting adjustment
+- Aft beacons position changed according to 7K-TM
+- Minor PAO mesh adjustments
+- Vzor model and optical functionality added
+- Gyro or DUS for inertial added (BDUS integration)
+- BDUS now required ON for any angular rates in orbit
+- Integrating Accelerometer for (manual) SKDU burns added
+- Switch from Igla to Igla-monitored manual approach added
+- Thermal covers animation on PAO separation
+- Documentation updated / Flight Guide added
+- Code now under MIT license
+
+
+13/06/2022:
+- SSVP realistic sequence: hooks and latches functionality added
+- SSVP correct configuration required for docking
+- VC Flight Engineer camera positions
+- New INK globe texture
+- Full INK functionality except daylight/shade indicator
+- Minor mesh and lighting adjustment
+- Documentation updated
